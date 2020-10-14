@@ -7,7 +7,7 @@ import IconButton from './IconButton';
 import Engagement from './Engagement';
 import SocialMediaLinks from './SocialMediaLinks';
 import FooterSubscription from './FooterSubscription';
-import SearchButton from './SearchButton';
+import EmailSubscribeForm from './EmailSubscribeForm';
 
 
 
@@ -34,7 +34,7 @@ const LayoutRoute = (props) => {
     return (
         <React.Fragment>
             <NavBar 
-                brand="MPRC" 
+                brand="MPD" 
                 links={[
                 {
                     label: 'Home',
@@ -86,14 +86,14 @@ const LayoutRoute = (props) => {
                     <IconButton icon="fa-youtube"/>
                     </SocialMediaLinks>
 
-                    <FooterSubscription>
-                    <SearchButton  btnLabel="Search"/>
+                    <FooterSubscription>  
+                    <EmailSubscribeForm btnLabel="Subscribe"/> 
                     </FooterSubscription>
 
                     
                 </Engagement>
                 <NavBar 
-                    brand="MPRC" 
+                    brand="MPD" 
                     links={
                     [
                         {
@@ -111,6 +111,7 @@ const LayoutRoute = (props) => {
                        
                     ]
                     }
+                    
                 />
             </div>
         </React.Fragment>

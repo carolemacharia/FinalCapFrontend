@@ -1,11 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { Redirect,Link } from 'react-router-dom';
-import AppContext from './AppContext';
 import './App.css';
 import Jumbotron from './Jumbotron';
 import Card from './Card';  
 
-import SearchButton from './SearchButton'; 
+import SearchField from "react-search-field";
 
 
 const MainScreen = () => {
@@ -22,20 +20,15 @@ const MainScreen = () => {
         description="We are a national resource centre dedicated to reunite missing people with their loved ones by facilitating information sharing, reporting and searches for missing individuals.Please use the search button to search through the names in the database."
         btnLabel="Search"
       >
-        <SearchButton btnLabel="Search"/>
+        <br></br>
+      <SearchField/>
+
       </Jumbotron>
       </center>
       
-      {/* {
-        !globalState.loggedIn &&
-        <div className="container">
-        <p>You need to be logged in</p>
-        </div>
-      } */}
 
       
       {
-        // globalState.loggedIn &&
         <div className="container" 
         style={{"display": "flex", "justify-content": "space-between"}}>
 

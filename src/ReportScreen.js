@@ -5,6 +5,8 @@ import { Redirect } from 'react-router-dom';
 
 const ReportScreen = () => {
 
+    
+
    
 
     const [globalState, setGlobalState] = useContext(AppContext);
@@ -101,7 +103,7 @@ const ReportScreen = () => {
 
 
             // fetch function
-            fetch('http://localhost:3001/users/register',{
+            fetch('http://localhost:3001/person',{
                 method: 'POST',
                 //headers: {"Content-Type": "multipart/form-data"},
                 body: formData
@@ -145,8 +147,14 @@ const ReportScreen = () => {
         }
     }
 
-    
+
+    if(state.success) {
         return (
+            <Redirect to="/" />
+        )
+    }
+    
+        else{return (
             <div>
                 
 
@@ -191,13 +199,13 @@ const ReportScreen = () => {
                     <label>Enter the missing person's age *</label>
                     <input ref={(comp)=>ageField = comp} className="field form-control" name="age" type="number" />
 
-                    <label>Enter a short description of the missing person*</label>
-                    <input ref={(comp)=>descriptionField = comp} className="field form-control" name="text" autocomplete="off" type="text" />
+                    <label>Enter a short description of the missing person *</label>
+                    <input ref={(comp)=>descriptionField = comp} className="field form-control" name="text" type="text" />
 
-                    <label>Enter last known location (optional)</label>
+                    <label>Enter last known location *</label>
                     <input ref={(comp)=>locationField = comp} className="field form-control" name="" type="text" />
 
-                    <label>Enter last seen date (optional)</label>
+                    <label>Enter last seen date *</label>
                     <input ref={(comp)=>dateField = comp} className="field form-control" name="" type="date" />
 
                     <br/><br/>
@@ -211,7 +219,7 @@ const ReportScreen = () => {
 
                     <br/><br/>
 
-                    <label>Do you agree to terms &amp; conditions? *</label>
+                    <label>Do you agree to the terms &amp; conditions? *&nbsp;</label>
                     <input ref={(comp)=>termsConditionsCheck = comp} className="checkbox" name="termsConditions" 
                     type="checkbox" /> Yes
 
@@ -235,6 +243,7 @@ const ReportScreen = () => {
             </div>
         )
     
+}
 }
 
 export default ReportScreen;

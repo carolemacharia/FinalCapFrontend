@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import AppContext from './AppContext';
 import { Redirect } from 'react-router-dom';
-import NavBar from './NavBar';
 import { validEmail, validPassword } from './utils';
 
 const RegistrationScreen = () => {

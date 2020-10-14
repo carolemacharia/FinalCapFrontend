@@ -65,7 +65,8 @@ input[type=checkbox].error {
   color: black;
 
   background-color:white;
-  text-align:center
+  text-align:center;
+  font-family:Times New Roman;
 }
 
 .Address{
